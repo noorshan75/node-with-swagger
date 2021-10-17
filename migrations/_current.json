@@ -1,0 +1,54 @@
+{
+    "tables": {
+        "testdbs": {
+            "tableName": "testdbs",
+            "schema": {
+                "userId": {
+                    "unique": true,
+                    "primaryKey": true,
+                    "field": "userId",
+                    "seqType": "Sequelize.UUID"
+                },
+                "name": {
+                    "field": "name",
+                    "seqType": "Sequelize.STRING"
+                },
+                "email": {
+                    "defaultValue": {
+                        "value": "example@gmail.com"
+                    },
+                    "unique": true,
+                    "field": "email",
+                    "seqType": "Sequelize.STRING"
+                },
+                "gender": {
+                    "field": "gender",
+                    "seqType": "Sequelize.STRING"
+                },
+                "password": {
+                    "field": "password",
+                    "seqType": "Sequelize.STRING"
+                },
+                "isDeleted": {
+                    "defaultValue": {
+                        "value": false
+                    },
+                    "field": "isDeleted",
+                    "seqType": "Sequelize.BOOLEAN"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 1
+}
