@@ -1,12 +1,12 @@
 {
-  "test": {
+  "development": {
     "username": "admin_mysql_db",
     "password": "Noor@123",
     "database": "admin_mysql_db",
     "host": "db4free.net",
     "dialect": "mysql"
   },
-  "development": {
+  "test": {
     "username": "root",
     "password": null,
     "database": "database_test",
