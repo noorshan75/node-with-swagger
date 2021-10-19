@@ -77,11 +77,11 @@ deleteById :async (req, res) => {
 login: async(req,res)=>{
   const email=req.body.email;
   const password=req.body.password;
-  // try{
-    return res.status(404).json({"message":`user not found.${JSON.parse(userDao)}`});
+  try{
+
     let user = await userDao.signin(email, password);
     if(!user){
-     return res.status(404).json({"message":`user not found.${userDao}`});
+     return res.status(404).json({"message":"user not found."});
    }
    const hashPass = bcrypt.compareSync(password, user.password);
    if(user && hashPass){
@@ -102,10 +102,10 @@ login: async(req,res)=>{
    else if( user || hashPass){
      return res.status(401).json({message: "Invalid credential",})
    }
-//  }
-//  catch(error){
-//   winston.error(`Error occurs while sigin user :${error}`)
-//   return res.status(500).json({"message":"Unable to your request. please try again later."});
-// }
+ }
+ catch(error){
+  winston.error(`Error occurs while sigin user :${error}`)
+  return res.status(500).json({"message":"Unable to your request. please try again later."});
+}
 },
 }
