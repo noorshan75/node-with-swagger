@@ -78,7 +78,7 @@ login: async(req,res)=>{
   const email=req.body.email;
   const password=req.body.password;
   // try{
-    return res.status(404).json({"message":`user not found.${userDao}`});
+    return res.status(404).json({"message":`user not found.${JSON.parse(userDao)}`});
     let user = await userDao.signin(email, password);
     if(!user){
      return res.status(404).json({"message":`user not found.${userDao}`});
